@@ -1,0 +1,10 @@
+_target_: src.models.detokenizer.adapter_modules.SDXLAdapter.from_pretrained
+
+resampler: 
+  _target_: src.models.detokenizer.resampler.AvgPoolQuery
+  n_query: 64
+
+vit_down: True
+full_ft: False
+snr_gamma: 5.0
+use_neg: False

@@ -1,0 +1,19 @@
+_target_: src.models.tokenizer.eva_vision.build_eva_vision_encoder
+vision_config:
+  drop_path_rate: 0
+  eva_model_name: eva-clip-E-14-plus
+  head_width: 112
+  image_size: 448
+  intermediate_size: 15360
+  layer_norm_eps: 1e-06
+  layers: 64
+  mlp_ratio: 8.571428571428571
+  n_query: 64
+  patch_size: 14
+  postnorm: True
+  qkv_bias: True
+  v_query: 64
+  width: 1792
+  xattn: False
+
+pretrained_path: ./wegen_mllm_ckpt/pretrained/EVA-CLIP/visual.pt

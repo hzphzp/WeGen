@@ -1,0 +1,5 @@
+_target_: src.models.mllm.peft_models.get_full_model_with_resize_embedding
+model:
+  _target_: src.models.mllm.llama2_var.LlamaForCausalLMVAR.from_pretrained
+  pretrained_model_name_or_path: ./wegen_mllm_ckpt/pretrained/meta-llama/Llama-2-7b-chat-hf
+vocab_size: 32330

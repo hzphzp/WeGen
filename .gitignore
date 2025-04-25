@@ -1,0 +1,10 @@
+validation/*
+data/*
+pretrained/
+.DS_Store
+*.pyc
+output/
+.vscode/
+*_910B.sh
+*_910B.py
+logs/

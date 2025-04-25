@@ -1,0 +1,32 @@
+_target_: src.models.mllm.wegen_mllm_var.ContinuousLVLMJointLLMSDVAR.from_pretrained
+input_resampler:
+  _target_: src.models.tokenizer.eva_vision.AvgPoolProjector
+  avgpoolquery:
+    _target_: src.models.detokenizer.resampler.AvgPoolQuery
+    n_query: 64
+  input_dim: 1792
+  output_dim: 4096
+
+output_resampler:
+  _target_: src.models.tokenizer.eva_vision.LinearProjector
+  input_dim: 4096
+  output_dim: 1792
+
+tied_projector: False
+
+add_patch_pos: False
+vit_down: True
+mse: True
+
+lm_loss_scale: 1.0
+rec_loss_scale: 1.0
+rec_loss_attr:
+  - mse_loss
+  - cosine_loss
+  - diffusion_loss
+rec_loss_attr_weight:
+  - 1.0
+  - 1.0
+  - 1.0
+
+pretrained_model_path: ./wegen_mllm_ckpt/stage2_final/checkpoint-30000/pytorch_model_merged.bin
